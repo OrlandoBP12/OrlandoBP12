@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Orlando -  DIMECAR EU. </title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.7);
+      border: none;
+      font-size: 3rem;
+      padding: 15px;
+      cursor: pointer;
+      color: #fff;
+      border-radius: 50%;
+      z-index: 10;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    .carrusel {
+      position: relative;
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+      background: #f0f0f0;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .carrusel-imagenes {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carrusel figure {
+      min-width: 100%;
+      margin: 0;
+      text-align: center;
+      color: #000;
+    }
+
+    .carrusel img {
+      width: 20%;
+      height: auto;
+      margin: auto;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+      display: block;
+    }
+
+    .carrusel figcaption {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1> DIMECAR SAS.
+ Transformación y fabricación de Vehículos</h1>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section id="intro">
+    <h2>Diseño y Fabricación a Tu Medida</h2>
+    <p>Convertimos tus camionetas tipo van en casas rodantes, oficinas móviles, laboratorios sobre ruedas, transporte especializado para animales o personas con discapacidad.</p>
+    <p>También fabricamos trailers tipo tiro de arrastre con funcionalidades similares, todo adaptado a tus necesidades.</p>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios que ofrecemos</h2>
+    <ul>
+      <li>Diseño CAD personalizado de interiores y estructuras móviles</li>
+      <li>Adecuación de vans para proyectos específicos</li>
+      <li>Fabricación de casas rodantes y laboratorios móviles</li>
+      <li>Soluciones de accesibilidad para transporte adaptado</li>
+      <li>Construcción de trailers para usos múltiples</li>
+    </ul>
+  </section>
+
+  <section id="galeria">
+    <h2>Galería de Proyectos</h2>
+    <div class="carrusel">
+      <button class="prev">&#10094;</button>
+      <div class="carrusel-imagenes">
+
+        <figure>
+          <img src="tallermovil.jpg" alt="Taller Móvil" loading="lazy">
+          <figcaption>TALLER MÓVIL</figcaption>
+        </figure>
+
+        <figure>
+          <img src="Laboratoriomovil.jpg" alt="Laboratorio Móvil" loading="lazy">
+          <figcaption>LABORATORIO MÓVIL</figcaption>
+        </figure>
+
+        <figure>
+          <img src="Esteticamascostas.jpg" alt="Estética para Mascotas" loading="lazy">
+          <figcaption>ESTÉTICA PARA MASCOTAS</figcaption>
+        </figure>
+
+        <figure>
+          <img src="Oficinamovil.jpg" alt="Oficina Móvil" loading="lazy">
+          <figcaption>OFICINA MÓVIL</figcaption>
+        </figure>
+
+        <figure>
+          <img src="Transportedemercaciasclasificadas.jpg" alt="Transporte de Mercancías" loading="lazy">
+          <figcaption>TRANSPORTE DE MERCANCÍAS</figcaption>
+        </figure>
+
+      </div>
+      <button class="next">&#10095;</button>
+    </div>
+
+  </section>
+
+  <section id="contacto">
+   <div style="font-family: Arial, sans-serif; font-size: 16px; padding: 20px; border: 1px solid #ccc; max-width: 400px;">
+  <h2 style="margin-bottom: 15px;">Contacto</h2>
+  <p><strong>👤 Nombre:</strong> <span style="color: #003366; font-weight: bold;">Orlando Bayona Páez.</span></p>
+  <p><strong>📞 Teléfono:</strong> <a href="tel:+573204247627">+57 320 424 7627</a></p>
+  <p>
+    <strong><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width:20px; vertical-align:middle; margin-right:5px;"> WhatsApp:</strong>
+    <a href="https://wa.me/573204247627" target="_blank">+57 320 424 7627</a>
+  </p>
+  <p><strong>📧 Correo:</strong> <a href="mailto:orlandobp1@hotmail.com">orlandobp1@hotmail.com</a></p>
+</div>
+
+
+
+
+  </section>
+
+  <footer>
+    <p>© 2025 Orlando Bayona Páez - Diseño y Fabricación</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const carrusel = document.querySelector('.carrusel-imagenes');
+      const prevBtn = document.querySelector('.prev');
+      const nextBtn = document.querySelector('.next');
+      let index = 0;
+
+      const total = carrusel.children.length;
+
+      function updateCarrusel() {
+        carrusel.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      prevBtn.addEventListener('click', () => {
+        index = (index - 1 + total) % total;
+        updateCarrusel();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        index = (index + 1) % total;
+        updateCarrusel();
+      });
+
+      updateCarrusel();
+    });
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,160 @@
+/* === Estilo general del cuerpo === */
+body {
+  background-image: url('fondo.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #000;
+}
+
+/* === Encabezado === */
+header {
+  background: #004d7a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 4px solid #003366;
+}
+
+/* === Navegación === */
+nav a {
+  margin: 0 15px;
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* === Secciones principales === */
+section {
+  padding: 30px;
+  margin: 20px;
+  background: rgba(243, 227, 210, 0.6);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* === Pie de página === */
+footer {
+  background: #004d7a;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* === Galería de imágenes === */
+#galeria {
+  background-image: none !important; /* Elimina fondo del body */
+  background-color: #f5f5f5;          /* Fondo claro para galería */
+  padding: 40px 20px;
+  border-radius: 15px;
+  color: #000;
+}
+
+#galeria h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+#galeria .galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+#galeria figure {
+  background-color: #fff;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#galeria img {
+  width: 90%;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+}
+
+#galeria figcaption {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #000 !important;
+  text-shadow: none;
+}
+
+/* === Tamaños de imagen personalizados === */
+.img-pequena {
+  flex: 1 1 calc(50% - 40px);
+  max-width: calc(50% - 40px);
+}
+
+.img-grande {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+
+/* === Carrusel (si lo usas) === */
+.carrusel {
+  position: relative;
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+  background: #222;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.carrusel-imagenes {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carrusel figure {
+  min-width: 100%;
+  margin: 0;
+  text-align: center;
+  color: #fff;
+}
+
+.carrusel img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #fff;
+}
+
+.carrusel figcaption {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.3);
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  border-radius: 50%;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(255,255,255,0.6);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
